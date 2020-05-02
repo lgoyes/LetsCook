@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+protocol ApplicationCoordinatorType {
+    
+}
+
+final class ApplicationCoordinator: BaseCoordinator {
+    
+}
+
+extension ApplicationCoordinator: ApplicationCoordinatorType {
+    
+}
