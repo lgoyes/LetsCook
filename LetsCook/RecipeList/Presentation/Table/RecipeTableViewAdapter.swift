@@ -14,8 +14,11 @@ protocol RecipeTableViewAdapterDelegate: AnyObject {
 
 final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITableViewDelegate, UITableViewDataSource {
     
-    var data: [RecipeAdapterCellViewModel] = []
     private let cellIdentifier: String = "RecipeAdapterCell"
+    
+    var data: [RecipeAdapterCellViewModel] = []
+    var filterString: String = ""
+    
     var tableView: UITableView?
     weak var delegate: RecipeTableViewAdapterDelegate?
     
@@ -34,7 +37,11 @@ final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if filterString.isEmpty {
+            return data.count
+        } else {
+            return data.filter({ $0.title.contains(filterString) }).count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,7 +49,14 @@ final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITab
             fatalError()
         }
         
-        cell.configure(with: data[indexPath.row])
+        let filteredData: [RecipeAdapterCellViewModel]
+        if filterString.isEmpty {
+            filteredData = data
+        } else {
+            filteredData = data.filter({ $0.title.contains(filterString) })
+        }
+        
+        cell.configure(with: filteredData[indexPath.row])
         
         return cell
     }
@@ -52,5 +66,10 @@ final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITab
         let mappedRecipe = Recipe(id: recipe.id, title: recipe.title)
         delegate?.tableViewAdapter(didSelectRecipe: mappedRecipe)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func setFilterString(_ filterString: String) {
+        self.filterString = filterString
+        tableView?.reloadData()
     }
 }

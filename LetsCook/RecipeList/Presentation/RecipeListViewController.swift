@@ -6,7 +6,7 @@
 //  Copyright © 2020 LuisGoyes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol RecipeListViewType: BaseViewType {
     func set(data: [Recipe])
@@ -24,15 +24,26 @@ final class RecipeListViewController: BaseViewController<RecipeListPresenterType
         return self.view as! RecipeListUIViewType
     }
     
+    var searchController: UISearchController!
+    
     override func viewDidLoad() {
         presenter.bind(view: self)
         super.viewDidLoad()
+        searchController = prepareSeachController()
     }
     
     override func loadView() {
         let view = RecipeListView()
         adapter.attach(to: view.tableView)
         self.view = view
+    }
+    
+    func prepareSeachController() -> UISearchController {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        return searchController
     }
 }
 
@@ -46,5 +57,11 @@ extension RecipeListViewController: RecipeListViewType {
 extension RecipeListViewController: RecipeTableViewAdapterDelegate {
     func tableViewAdapter(didSelectRecipe recipe: Recipe) {
         presenter.onRecipeSelected(recipe)
+    }
+}
+
+extension RecipeListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        adapter.setFilterString(searchController.searchBar.text ?? "")
     }
 }
