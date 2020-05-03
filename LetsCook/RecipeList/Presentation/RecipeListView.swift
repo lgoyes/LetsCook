@@ -25,6 +25,7 @@ final class RecipeListView: UIView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         return activityIndicator
     }()
     
@@ -57,7 +58,9 @@ final class RecipeListView: UIView {
 
 extension RecipeListView: RecipeListUIViewType {
     func showTable() {
+        guard activityIndicator.isAnimating else { return }
         tableView.isHidden = false
         activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
 }
