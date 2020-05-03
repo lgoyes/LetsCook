@@ -16,12 +16,6 @@ class TestBaseInteractorAdapter<Response, Params>: BaseInteractorAdapter<Respons
 
 class BaseInteractorAdapterTests: XCTestCase {
     
-    struct Constants {
-        enum TestError: Error {
-            case dummyError
-        }
-    }
-    
     var sut: TestBaseInteractorAdapter<Any, Any>!
     
     override func setUp() {

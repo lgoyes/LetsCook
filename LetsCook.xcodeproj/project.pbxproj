@@ -65,6 +65,7 @@
 		9B4C7D74245E48B10038842F /* RecipeDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D73245E48B10038842F /* RecipeDetailConfigurator.swift */; };
 		9B4C7D76245E48BC0038842F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D75245E48BC0038842F /* RecipeDetailViewController.swift */; };
 		9B4C7D78245E48C50038842F /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D77245E48C50038842F /* RecipeDetailView.swift */; };
+		9B953069245F6CD8005DABCB /* SingleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B953068245F6CD8005DABCB /* SingleInteractorTests.swift */; };
 		9BE30060245E7AA70070E915 /* RecipeAdapterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3005F245E7AA70070E915 /* RecipeAdapterCellViewModel.swift */; };
 		9BE30062245E7AB60070E915 /* RecipeAdapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30061245E7AB60070E915 /* RecipeAdapterCell.swift */; };
 		9BE30066245E80450070E915 /* APIRecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30065245E80450070E915 /* APIRecipeDetail.swift */; };
@@ -162,6 +163,7 @@
 		9B4C7D73245E48B10038842F /* RecipeDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailConfigurator.swift; sourceTree = "<group>"; };
 		9B4C7D75245E48BC0038842F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		9B4C7D77245E48C50038842F /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		9B953068245F6CD8005DABCB /* SingleInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleInteractorTests.swift; sourceTree = "<group>"; };
 		9BE3005F245E7AA70070E915 /* RecipeAdapterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAdapterCellViewModel.swift; sourceTree = "<group>"; };
 		9BE30061245E7AB60070E915 /* RecipeAdapterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAdapterCell.swift; sourceTree = "<group>"; };
 		9BE30065245E80450070E915 /* APIRecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRecipeDetail.swift; sourceTree = "<group>"; };
@@ -259,12 +261,9 @@
 		9B0FA31B245E27CE00492755 /* LetsCookTests */ = {
 			isa = PBXGroup;
 			children = (
+				9B95306A245F6CDF005DABCB /* ArchitectureBasics */,
 				9B0FA34B245E28B300492755 /* TestDoubles */,
 				9B0FA31E245E27CE00492755 /* Info.plist */,
-				9B0FA350245E28EC00492755 /* BaseCoordinatorTests.swift */,
-				9B0FA366245E2EEF00492755 /* BasePresenterTests.swift */,
-				9B049F87245F646A004EC6EA /* BaseInteractorAdapterTests.swift */,
-				9B049F89245F6480004EC6EA /* BaseInteractorTests.swift */,
 			);
 			path = LetsCookTests;
 			sourceTree = "<group>";
@@ -560,6 +559,18 @@
 				9B4C7D77245E48C50038842F /* RecipeDetailView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9B95306A245F6CDF005DABCB /* ArchitectureBasics */ = {
+			isa = PBXGroup;
+			children = (
+				9B0FA350245E28EC00492755 /* BaseCoordinatorTests.swift */,
+				9B0FA366245E2EEF00492755 /* BasePresenterTests.swift */,
+				9B049F87245F646A004EC6EA /* BaseInteractorAdapterTests.swift */,
+				9B049F89245F6480004EC6EA /* BaseInteractorTests.swift */,
+				9B953068245F6CD8005DABCB /* SingleInteractorTests.swift */,
+			);
+			path = ArchitectureBasics;
 			sourceTree = "<group>";
 		};
 		9BE30063245E80350070E915 /* Data */ = {
@@ -951,6 +962,7 @@
 				9B0FA351245E28EC00492755 /* BaseCoordinatorTests.swift in Sources */,
 				9B0FA367245E2EEF00492755 /* BasePresenterTests.swift in Sources */,
 				9B0FA361245E2C2200492755 /* BasePresenterSpy.swift in Sources */,
+				9B953069245F6CD8005DABCB /* SingleInteractorTests.swift in Sources */,
 				9B049F8A245F6480004EC6EA /* BaseInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
