@@ -9,16 +9,31 @@
 import Foundation
 
 protocol RecipeListViewType: BaseViewType {
-    
+    func set(data: [Recipe])
 }
 
 final class RecipeListViewController: BaseViewController<RecipeListPresenterType> {
+    
+    let adapter = RecipeTableViewAdapter()
     
     private var content: RecipeListUIViewType {
         return self.view as! RecipeListUIViewType
     }
     
+    override func viewDidLoad() {
+        presenter.bind(view: self)
+        super.viewDidLoad()
+    }
+    
     override func loadView() {
-        view = RecipeListView()
+        let view = RecipeListView()
+        adapter.attach(to: view.tableView)
+        self.view = view
+    }
+}
+
+extension RecipeListViewController: RecipeListViewType {
+    func set(data: [Recipe]) {
+        adapter.set(data: data)
     }
 }

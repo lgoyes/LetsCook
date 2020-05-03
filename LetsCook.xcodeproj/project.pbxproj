@@ -40,6 +40,10 @@
 		9B0FA373245E398600492755 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA372245E398600492755 /* HTTPMethod.swift */; };
 		9B0FA375245E399700492755 /* APIContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA374245E399700492755 /* APIContentType.swift */; };
 		9B0FA377245E3A3900492755 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA376245E3A3900492755 /* RESTClient.swift */; };
+		9B3ADDF8245E4A8300488C25 /* RecipeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDF7245E4A8300488C25 /* RecipeTableView.swift */; };
+		9B3ADDFA245E4B3700488C25 /* RecipeTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDF9245E4B3700488C25 /* RecipeTableViewAdapter.swift */; };
+		9B3ADDFD245E4DAA00488C25 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDFC245E4DAA00488C25 /* Recipe.swift */; };
+		9B3ADE00245E4DE700488C25 /* APIRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */; };
 		9B4C7D52245E3BD40038842F /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D51245E3BD40038842F /* ResponseValidator.swift */; };
 		9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D53245E3C040038842F /* NetworkError.swift */; };
 		9B4C7D56245E3D690038842F /* RESTRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D55245E3D690038842F /* RESTRawResponse.swift */; };
@@ -122,6 +126,10 @@
 		9B0FA372245E398600492755 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		9B0FA374245E399700492755 /* APIContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContentType.swift; sourceTree = "<group>"; };
 		9B0FA376245E3A3900492755 /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
+		9B3ADDF7245E4A8300488C25 /* RecipeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableView.swift; sourceTree = "<group>"; };
+		9B3ADDF9245E4B3700488C25 /* RecipeTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewAdapter.swift; sourceTree = "<group>"; };
+		9B3ADDFC245E4DAA00488C25 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRecipe.swift; sourceTree = "<group>"; };
 		9B4C7D51245E3BD40038842F /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
 		9B4C7D53245E3C040038842F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9B4C7D55245E3D690038842F /* RESTRawResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTRawResponse.swift; sourceTree = "<group>"; };
@@ -403,6 +411,31 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		9B3ADDF6245E4A7300488C25 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADDF7245E4A8300488C25 /* RecipeTableView.swift */,
+				9B3ADDF9245E4B3700488C25 /* RecipeTableViewAdapter.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		9B3ADDFB245E4DA300488C25 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADDFC245E4DAA00488C25 /* Recipe.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9B3ADDFE245E4DDC00488C25 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9B4C7D57245E3EBA0038842F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +457,8 @@
 		9B4C7D61245E43C50038842F /* RecipeList */ = {
 			isa = PBXGroup;
 			children = (
+				9B3ADDFE245E4DDC00488C25 /* Data */,
+				9B3ADDFB245E4DA300488C25 /* Domain */,
 				9B4C7D6C245E48360038842F /* Presentation */,
 			);
 			path = RecipeList;
@@ -432,6 +467,7 @@
 		9B4C7D6C245E48360038842F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9B3ADDF6245E4A7300488C25 /* Table */,
 				9B4C7D62245E43E10038842F /* RecipeListCoordinator.swift */,
 				9B4C7D64245E43EA0038842F /* RecipeListPresenter.swift */,
 				9B4C7D66245E43F20038842F /* RecipeListConfigurator.swift */,
@@ -706,6 +742,7 @@
 				9B0FA33D245E284E00492755 /* CoordinatorType.swift in Sources */,
 				9B0FA338245E282100492755 /* RouterType.swift in Sources */,
 				9B0FA33F245E285D00492755 /* BaseCoordinator.swift in Sources */,
+				9B3ADDFD245E4DAA00488C25 /* Recipe.swift in Sources */,
 				9B4C7D74245E48B10038842F /* RecipeDetailConfigurator.swift in Sources */,
 				9B4C7D70245E489F0038842F /* RecipeDetailCoordinator.swift in Sources */,
 				9B0FA375245E399700492755 /* APIContentType.swift in Sources */,
@@ -723,11 +760,14 @@
 				9B4C7D52245E3BD40038842F /* ResponseValidator.swift in Sources */,
 				9B4C7D76245E48BC0038842F /* RecipeDetailViewController.swift in Sources */,
 				9B4C7D65245E43EA0038842F /* RecipeListPresenter.swift in Sources */,
+				9B3ADE00245E4DE700488C25 /* APIRecipe.swift in Sources */,
 				9B0FA371245E396A00492755 /* Endpoint.swift in Sources */,
+				9B3ADDF8245E4A8300488C25 /* RecipeTableView.swift in Sources */,
 				9B0FA36F245E394600492755 /* ClientType.swift in Sources */,
 				9B4C7D78245E48C50038842F /* RecipeDetailView.swift in Sources */,
 				9B0FA35B245E2BAB00492755 /* BaseViewType.swift in Sources */,
 				9B4C7D5B245E3ECA0038842F /* DomainConstants.swift in Sources */,
+				9B3ADDFA245E4B3700488C25 /* RecipeTableViewAdapter.swift in Sources */,
 				9B0FA358245E2B6C00492755 /* BasePresenterType.swift in Sources */,
 				9B4C7D63245E43E10038842F /* RecipeListCoordinator.swift in Sources */,
 				9B4C7D60245E42510038842F /* UIViewController+Presentable.swift in Sources */,
