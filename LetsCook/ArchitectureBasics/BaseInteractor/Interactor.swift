@@ -34,30 +34,26 @@ class BaseInteractor<Response, Parameters> {
 class BaseInteractorAdapter<Response, Parameters, ChainType>: Interactor {
 
     let baseInteractor = BaseInteractor<Response, Parameters>()
-    
-    public init() {
-        // Intentionally left in blank
-    }
 
     @discardableResult
-    public func params(_ paramsAttribute: Parameters?) -> ChainType {
+    func params(_ paramsAttribute: Parameters?) -> ChainType {
         self.baseInteractor.paramsAttribute = paramsAttribute
         return self as! ChainType
     }
 
     @discardableResult
-    public func onFinally(_ onFinallyCallback: (() -> Void)?) -> ChainType {
+    func onFinally(_ onFinallyCallback: (() -> Void)?) -> ChainType {
         self.baseInteractor.onFinallyCallback = onFinallyCallback
         return self as! ChainType
     }
 
     @discardableResult
-    public func onError(_ onErrorCallback: ((Error) -> Void)?) -> ChainType {
+    func onError(_ onErrorCallback: ((Error) -> Void)?) -> ChainType {
         self.baseInteractor.onErrorCallback = onErrorCallback
         return self as! ChainType
     }
 
-    public func execute() {
+    func execute() {
         // Intentionally left in blank
     }
 }

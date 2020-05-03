@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D71267BAC5830EEB02220D2 /* Pods_LetsCookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7D0258E797D4E08A99BA68 /* Pods_LetsCookTests.framework */; };
 		759A5261382B1C6B0E91AD8A /* Pods_LetsCookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAED987C2F80B0595B3EE8D4 /* Pods_LetsCookUITests.framework */; };
+		9B049F88245F646A004EC6EA /* BaseInteractorAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B049F87245F646A004EC6EA /* BaseInteractorAdapterTests.swift */; };
+		9B049F8A245F6480004EC6EA /* BaseInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B049F89245F6480004EC6EA /* BaseInteractorTests.swift */; };
 		9B0FA306245E27CD00492755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA305245E27CD00492755 /* AppDelegate.swift */; };
 		9B0FA308245E27CD00492755 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA307245E27CD00492755 /* SceneDelegate.swift */; };
 		9B0FA30A245E27CD00492755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA309245E27CD00492755 /* ViewController.swift */; };
@@ -98,6 +100,8 @@
 		549FF0E81AD65580FB4B0111 /* Pods-LetsCookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCookTests.debug.xcconfig"; path = "Target Support Files/Pods-LetsCookTests/Pods-LetsCookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6246C5036AB73B1BE67F66B2 /* Pods-LetsCookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCookTests.release.xcconfig"; path = "Target Support Files/Pods-LetsCookTests/Pods-LetsCookTests.release.xcconfig"; sourceTree = "<group>"; };
 		654C69468D021CA9A178FF72 /* Pods-LetsCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCookUITests.release.xcconfig"; path = "Target Support Files/Pods-LetsCookUITests/Pods-LetsCookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B049F87245F646A004EC6EA /* BaseInteractorAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractorAdapterTests.swift; sourceTree = "<group>"; };
+		9B049F89245F6480004EC6EA /* BaseInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractorTests.swift; sourceTree = "<group>"; };
 		9B0FA302245E27CD00492755 /* LetsCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0FA305245E27CD00492755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B0FA307245E27CD00492755 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				9B0FA31E245E27CE00492755 /* Info.plist */,
 				9B0FA350245E28EC00492755 /* BaseCoordinatorTests.swift */,
 				9B0FA366245E2EEF00492755 /* BasePresenterTests.swift */,
+				9B049F87245F646A004EC6EA /* BaseInteractorAdapterTests.swift */,
+				9B049F89245F6480004EC6EA /* BaseInteractorTests.swift */,
 			);
 			path = LetsCookTests;
 			sourceTree = "<group>";
@@ -940,10 +946,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B0FA363245E2C2C00492755 /* BaseViewControllerSpy.swift in Sources */,
+				9B049F88245F646A004EC6EA /* BaseInteractorAdapterTests.swift in Sources */,
 				9B0FA34F245E28D200492755 /* RouterSpy.swift in Sources */,
 				9B0FA351245E28EC00492755 /* BaseCoordinatorTests.swift in Sources */,
 				9B0FA367245E2EEF00492755 /* BasePresenterTests.swift in Sources */,
 				9B0FA361245E2C2200492755 /* BasePresenterSpy.swift in Sources */,
+				9B049F8A245F6480004EC6EA /* BaseInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

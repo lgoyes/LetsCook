@@ -9,12 +9,8 @@
 import RxSwift
 
 class SingleInteractor<Response, Parameters>: BaseInteractorAdapter<Response, Parameters, SingleInteractor> {
-    
-    public override init() {
-        // Intentionally left in blank
-    }
 
-    override public func execute() {
+    override func execute() {
         self.baseInteractor.disposable = buildUseCase(params: self.baseInteractor.paramsAttribute)
             .observeOn(MainScheduler.instance)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
@@ -34,7 +30,7 @@ class SingleInteractor<Response, Parameters>: BaseInteractorAdapter<Response, Pa
     }
 
     @discardableResult
-    public func onSuccess(_ onSuccessCallback: ((Response) -> Void)?) -> Self {
+    func onSuccess(_ onSuccessCallback: ((Response) -> Void)?) -> Self {
         self.baseInteractor.onNextCallback = onSuccessCallback
         return self
     }
