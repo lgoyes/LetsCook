@@ -14,10 +14,24 @@ protocol RecipeListPresenterType: BasePresenterType {
 
 final class RecipeListPresenter: BasePresenter<RecipeListViewType, RecipeListViewController>, RecipeListPresenterType {
     
+    struct Dependencies {
+        let getRecipesInteractor: GetRecipesInteractor
+    }
+    
+    let dependencies: Dependencies
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
+    }
+    
     override func viewDidLoad() {
-        // get data
-        view.set(data: [
-            Recipe(id: 1, title: "Test recipe")
-        ])
+        fetchAndPresentRecipes()
+    }
+    
+    func fetchAndPresentRecipes() {
+        dependencies
+            .getRecipesInteractor
+            .onSuccess { [weak self] (recipes) in
+                self?.view.set(data: recipes)
+            }.execute()
     }
 }

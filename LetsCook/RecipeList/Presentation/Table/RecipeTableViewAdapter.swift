@@ -15,6 +15,10 @@ struct RecipeAdapterCellViewModel {
 
 final class RecipeAdapterCell: UITableViewCell {
     
+    struct Constants {
+        static let margin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
     lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,10 +41,10 @@ final class RecipeAdapterCell: UITableViewCell {
     func setConstraints() {
         addSubview(label)
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: self.topAnchor),
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            label.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            label.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.margin.top),
+            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.margin.bottom),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.margin.left),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constants.margin.right)
         ])
     }
 }

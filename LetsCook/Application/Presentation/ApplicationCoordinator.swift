@@ -14,7 +14,6 @@ protocol ApplicationCoordinatorType: CoordinatorType {
 final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType {
     private var restClient: ClientType
     
-    
     // MARK: - Initializer
     required init(router: RouterType) {
         self.restClient = RESTClient(baseURL: DataConstants.serverURL)
@@ -39,6 +38,7 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
     
     private func createListCoordinator() -> RecipeListCoordinator {
         let coordinator = RecipeListCoordinator(router: router)
+        coordinator.restClient = restClient
         return coordinator
     }
     

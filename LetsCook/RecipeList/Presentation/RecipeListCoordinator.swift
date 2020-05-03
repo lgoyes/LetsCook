@@ -12,9 +12,15 @@ protocol RecipeListCoordinatorType: CoordinatorType {
 }
 
 final class RecipeListCoordinator: BaseCoordinator, RecipeListCoordinatorType {
+
+    var restClient: ClientType!
+    
     // MARK: - Initializer
     override func start() {
-        let module = RecipeListConfigurator.configure()
+        guard let restClient = restClient else {
+            fatalError("RestClient can not be nil")
+        }
+        let module = RecipeListConfigurator.configure(using: RecipeListConfigurator.Dependencies(client: restClient))
         self.router.push(module, animated: true)
     }
 }

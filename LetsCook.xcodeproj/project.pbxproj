@@ -44,6 +44,11 @@
 		9B3ADDFA245E4B3700488C25 /* RecipeTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDF9245E4B3700488C25 /* RecipeTableViewAdapter.swift */; };
 		9B3ADDFD245E4DAA00488C25 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDFC245E4DAA00488C25 /* Recipe.swift */; };
 		9B3ADE00245E4DE700488C25 /* APIRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */; };
+		9B3ADE04245E51E000488C25 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADE03245E51E000488C25 /* RecipeListRepository.swift */; };
+		9B3ADE0A245E53A500488C25 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADE09245E53A500488C25 /* Interactor.swift */; };
+		9B3ADE0C245E547000488C25 /* SingleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADE0B245E547000488C25 /* SingleInteractor.swift */; };
+		9B3ADE10245E54A600488C25 /* GetRecipesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADE0F245E54A600488C25 /* GetRecipesInteractor.swift */; };
+		9B3ADE13245E552900488C25 /* RecipeListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3ADE12245E552900488C25 /* RecipeListRepositoryType.swift */; };
 		9B4C7D52245E3BD40038842F /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D51245E3BD40038842F /* ResponseValidator.swift */; };
 		9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D53245E3C040038842F /* NetworkError.swift */; };
 		9B4C7D56245E3D690038842F /* RESTRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D55245E3D690038842F /* RESTRawResponse.swift */; };
@@ -130,6 +135,11 @@
 		9B3ADDF9245E4B3700488C25 /* RecipeTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewAdapter.swift; sourceTree = "<group>"; };
 		9B3ADDFC245E4DAA00488C25 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRecipe.swift; sourceTree = "<group>"; };
+		9B3ADE03245E51E000488C25 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
+		9B3ADE09245E53A500488C25 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		9B3ADE0B245E547000488C25 /* SingleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleInteractor.swift; sourceTree = "<group>"; };
+		9B3ADE0F245E54A600488C25 /* GetRecipesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesInteractor.swift; sourceTree = "<group>"; };
+		9B3ADE12245E552900488C25 /* RecipeListRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryType.swift; sourceTree = "<group>"; };
 		9B4C7D51245E3BD40038842F /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
 		9B4C7D53245E3C040038842F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9B4C7D55245E3D690038842F /* RESTRawResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTRawResponse.swift; sourceTree = "<group>"; };
@@ -257,6 +267,7 @@
 		9B0FA335245E280E00492755 /* ArchitectureBasics */ = {
 			isa = PBXGroup;
 			children = (
+				9B3ADE08245E539B00488C25 /* BaseInteractor */,
 				9B0FA359245E2B9800492755 /* BaseViewController */,
 				9B0FA352245E2B1D00492755 /* BasePresenter */,
 				9B0FA33B245E283B00492755 /* BaseCoordinator */,
@@ -423,7 +434,9 @@
 		9B3ADDFB245E4DA300488C25 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9B3ADDFC245E4DAA00488C25 /* Recipe.swift */,
+				9B3ADE11245E552100488C25 /* Repositories */,
+				9B3ADE0E245E549800488C25 /* Models */,
+				9B3ADE0D245E549300488C25 /* Interactors */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -431,9 +444,59 @@
 		9B3ADDFE245E4DDC00488C25 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */,
+				9B3ADE02245E51D600488C25 /* Models */,
+				9B3ADE01245E51CE00488C25 /* Repositories */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9B3ADE01245E51CE00488C25 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADE03245E51E000488C25 /* RecipeListRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9B3ADE02245E51D600488C25 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADDFF245E4DE700488C25 /* APIRecipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9B3ADE08245E539B00488C25 /* BaseInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADE09245E53A500488C25 /* Interactor.swift */,
+				9B3ADE0B245E547000488C25 /* SingleInteractor.swift */,
+			);
+			path = BaseInteractor;
+			sourceTree = "<group>";
+		};
+		9B3ADE0D245E549300488C25 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADE0F245E54A600488C25 /* GetRecipesInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		9B3ADE0E245E549800488C25 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADDFC245E4DAA00488C25 /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9B3ADE11245E552100488C25 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9B3ADE12245E552900488C25 /* RecipeListRepositoryType.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		9B4C7D57245E3EBA0038842F /* Constants */ = {
@@ -736,6 +799,7 @@
 				9B0FA30A245E27CD00492755 /* ViewController.swift in Sources */,
 				9B0FA354245E2B4A00492755 /* BasePresenter.swift in Sources */,
 				9B4C7D69245E43FC0038842F /* RecipeListViewController.swift in Sources */,
+				9B3ADE10245E54A600488C25 /* GetRecipesInteractor.swift in Sources */,
 				9B0FA306245E27CD00492755 /* AppDelegate.swift in Sources */,
 				9B0FA365245E2D8800492755 /* MainRouter.swift in Sources */,
 				9B4C7D72245E48A80038842F /* RecipeDetailPresenter.swift in Sources */,
@@ -745,7 +809,10 @@
 				9B3ADDFD245E4DAA00488C25 /* Recipe.swift in Sources */,
 				9B4C7D74245E48B10038842F /* RecipeDetailConfigurator.swift in Sources */,
 				9B4C7D70245E489F0038842F /* RecipeDetailCoordinator.swift in Sources */,
+				9B3ADE0A245E53A500488C25 /* Interactor.swift in Sources */,
 				9B0FA375245E399700492755 /* APIContentType.swift in Sources */,
+				9B3ADE13245E552900488C25 /* RecipeListRepositoryType.swift in Sources */,
+				9B3ADE0C245E547000488C25 /* SingleInteractor.swift in Sources */,
 				9B0FA348245E289700492755 /* ApplicationConfigurator.swift in Sources */,
 				9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */,
 				9B0FA373245E398600492755 /* HTTPMethod.swift in Sources */,
@@ -754,6 +821,7 @@
 				9B0FA33A245E283200492755 /* Presentable.swift in Sources */,
 				9B0FA346245E288E00492755 /* ApplicationPresenter.swift in Sources */,
 				9B4C7D59245E3EC30038842F /* DataConstants.swift in Sources */,
+				9B3ADE04245E51E000488C25 /* RecipeListRepository.swift in Sources */,
 				9B0FA308245E27CD00492755 /* SceneDelegate.swift in Sources */,
 				9B4C7D56245E3D690038842F /* RESTRawResponse.swift in Sources */,
 				9B0FA344245E288600492755 /* ApplicationCoordinator.swift in Sources */,
