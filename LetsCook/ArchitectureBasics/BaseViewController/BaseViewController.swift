@@ -11,6 +11,21 @@ import UIKit
 class BaseViewController<PresenterType>: UIViewController, BaseViewType {
 
     var presenter: PresenterType!
+    
+    init(presenter: PresenterType) {
+        super.init(nibName: nil, bundle: nil)
+        self.presenter = presenter
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Not implemented")
+    }
+    
+    deinit {
+        self.presenter = nil
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

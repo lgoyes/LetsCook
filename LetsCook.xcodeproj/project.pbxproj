@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,18 @@
 		9B0FA373245E398600492755 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA372245E398600492755 /* HTTPMethod.swift */; };
 		9B0FA375245E399700492755 /* APIContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA374245E399700492755 /* APIContentType.swift */; };
 		9B0FA377245E3A3900492755 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA376245E3A3900492755 /* RESTClient.swift */; };
+		9B4C7D52245E3BD40038842F /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D51245E3BD40038842F /* ResponseValidator.swift */; };
+		9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D53245E3C040038842F /* NetworkError.swift */; };
+		9B4C7D56245E3D690038842F /* RESTRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D55245E3D690038842F /* RESTRawResponse.swift */; };
+		9B4C7D59245E3EC30038842F /* DataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D58245E3EC30038842F /* DataConstants.swift */; };
+		9B4C7D5B245E3ECA0038842F /* DomainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D5A245E3ECA0038842F /* DomainConstants.swift */; };
+		9B4C7D5D245E3ED10038842F /* PresentationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D5C245E3ED10038842F /* PresentationConstants.swift */; };
+		9B4C7D60245E42510038842F /* UIViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D5F245E42510038842F /* UIViewController+Presentable.swift */; };
+		9B4C7D63245E43E10038842F /* RecipeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D62245E43E10038842F /* RecipeListCoordinator.swift */; };
+		9B4C7D65245E43EA0038842F /* RecipeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D64245E43EA0038842F /* RecipeListPresenter.swift */; };
+		9B4C7D67245E43F20038842F /* RecipeListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D66245E43F20038842F /* RecipeListConfigurator.swift */; };
+		9B4C7D69245E43FC0038842F /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D68245E43FC0038842F /* RecipeListViewController.swift */; };
+		9B4C7D6B245E454E0038842F /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D6A245E454E0038842F /* RecipeListView.swift */; };
 		D86C95BE46463702B1CC7041 /* Pods_LetsCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26689110563D1569E3745017 /* Pods_LetsCook.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +117,18 @@
 		9B0FA372245E398600492755 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		9B0FA374245E399700492755 /* APIContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContentType.swift; sourceTree = "<group>"; };
 		9B0FA376245E3A3900492755 /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
+		9B4C7D51245E3BD40038842F /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
+		9B4C7D53245E3C040038842F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		9B4C7D55245E3D690038842F /* RESTRawResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTRawResponse.swift; sourceTree = "<group>"; };
+		9B4C7D58245E3EC30038842F /* DataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConstants.swift; sourceTree = "<group>"; };
+		9B4C7D5A245E3ECA0038842F /* DomainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConstants.swift; sourceTree = "<group>"; };
+		9B4C7D5C245E3ED10038842F /* PresentationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationConstants.swift; sourceTree = "<group>"; };
+		9B4C7D5F245E42510038842F /* UIViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presentable.swift"; sourceTree = "<group>"; };
+		9B4C7D62245E43E10038842F /* RecipeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListCoordinator.swift; sourceTree = "<group>"; };
+		9B4C7D64245E43EA0038842F /* RecipeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListPresenter.swift; sourceTree = "<group>"; };
+		9B4C7D66245E43F20038842F /* RecipeListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListConfigurator.swift; sourceTree = "<group>"; };
+		9B4C7D68245E43FC0038842F /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		9B4C7D6A245E454E0038842F /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		9C7D0258E797D4E08A99BA68 /* Pods_LetsCookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsCookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB9D7A83F31D9E6EAA9D1A3 /* Pods-LetsCook-LetsCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCook-LetsCookUITests.release.xcconfig"; path = "Target Support Files/Pods-LetsCook-LetsCookUITests/Pods-LetsCook-LetsCookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F9417348DBB41CDAE28714A0 /* Pods-LetsCookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCookUITests.debug.xcconfig"; path = "Target Support Files/Pods-LetsCookUITests/Pods-LetsCookUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +198,9 @@
 		9B0FA304245E27CD00492755 /* LetsCook */ = {
 			isa = PBXGroup;
 			children = (
+				9B4C7D61245E43C50038842F /* RecipeList */,
+				9B4C7D5E245E42430038842F /* Extensions */,
+				9B4C7D57245E3EBA0038842F /* Constants */,
 				9B0FA36A245E391800492755 /* Networking */,
 				9B0FA340245E286B00492755 /* Application */,
 				9B0FA335245E280E00492755 /* ArchitectureBasics */,
@@ -344,6 +371,9 @@
 				9B0FA372245E398600492755 /* HTTPMethod.swift */,
 				9B0FA374245E399700492755 /* APIContentType.swift */,
 				9B0FA376245E3A3900492755 /* RESTClient.swift */,
+				9B4C7D51245E3BD40038842F /* ResponseValidator.swift */,
+				9B4C7D53245E3C040038842F /* NetworkError.swift */,
+				9B4C7D55245E3D690038842F /* RESTRawResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -362,6 +392,36 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		9B4C7D57245E3EBA0038842F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9B4C7D58245E3EC30038842F /* DataConstants.swift */,
+				9B4C7D5A245E3ECA0038842F /* DomainConstants.swift */,
+				9B4C7D5C245E3ED10038842F /* PresentationConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		9B4C7D5E245E42430038842F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B4C7D5F245E42510038842F /* UIViewController+Presentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B4C7D61245E43C50038842F /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				9B4C7D62245E43E10038842F /* RecipeListCoordinator.swift */,
+				9B4C7D64245E43EA0038842F /* RecipeListPresenter.swift */,
+				9B4C7D66245E43F20038842F /* RecipeListConfigurator.swift */,
+				9B4C7D68245E43FC0038842F /* RecipeListViewController.swift */,
+				9B4C7D6A245E454E0038842F /* RecipeListView.swift */,
+			);
+			path = RecipeList;
+			sourceTree = "<group>";
+		};
 		AB848DE4A40ED8749BA6CAE6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,7 +434,6 @@
 				F9417348DBB41CDAE28714A0 /* Pods-LetsCookUITests.debug.xcconfig */,
 				654C69468D021CA9A178FF72 /* Pods-LetsCookUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -601,6 +660,7 @@
 			files = (
 				9B0FA30A245E27CD00492755 /* ViewController.swift in Sources */,
 				9B0FA354245E2B4A00492755 /* BasePresenter.swift in Sources */,
+				9B4C7D69245E43FC0038842F /* RecipeListViewController.swift in Sources */,
 				9B0FA306245E27CD00492755 /* AppDelegate.swift in Sources */,
 				9B0FA365245E2D8800492755 /* MainRouter.swift in Sources */,
 				9B0FA33D245E284E00492755 /* CoordinatorType.swift in Sources */,
@@ -608,18 +668,29 @@
 				9B0FA33F245E285D00492755 /* BaseCoordinator.swift in Sources */,
 				9B0FA375245E399700492755 /* APIContentType.swift in Sources */,
 				9B0FA348245E289700492755 /* ApplicationConfigurator.swift in Sources */,
+				9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */,
 				9B0FA373245E398600492755 /* HTTPMethod.swift in Sources */,
+				9B4C7D6B245E454E0038842F /* RecipeListView.swift in Sources */,
+				9B4C7D5D245E3ED10038842F /* PresentationConstants.swift in Sources */,
 				9B0FA33A245E283200492755 /* Presentable.swift in Sources */,
 				9B0FA346245E288E00492755 /* ApplicationPresenter.swift in Sources */,
+				9B4C7D59245E3EC30038842F /* DataConstants.swift in Sources */,
 				9B0FA308245E27CD00492755 /* SceneDelegate.swift in Sources */,
+				9B4C7D56245E3D690038842F /* RESTRawResponse.swift in Sources */,
 				9B0FA344245E288600492755 /* ApplicationCoordinator.swift in Sources */,
+				9B4C7D52245E3BD40038842F /* ResponseValidator.swift in Sources */,
+				9B4C7D65245E43EA0038842F /* RecipeListPresenter.swift in Sources */,
 				9B0FA371245E396A00492755 /* Endpoint.swift in Sources */,
 				9B0FA36F245E394600492755 /* ClientType.swift in Sources */,
 				9B0FA35B245E2BAB00492755 /* BaseViewType.swift in Sources */,
+				9B4C7D5B245E3ECA0038842F /* DomainConstants.swift in Sources */,
 				9B0FA358245E2B6C00492755 /* BasePresenterType.swift in Sources */,
+				9B4C7D63245E43E10038842F /* RecipeListCoordinator.swift in Sources */,
+				9B4C7D60245E42510038842F /* UIViewController+Presentable.swift in Sources */,
 				9B0FA35D245E2BBC00492755 /* BaseViewController.swift in Sources */,
 				9B0FA356245E2B5700492755 /* BasePresenterLifeCycleNotifiable.swift in Sources */,
 				9B0FA377245E3A3900492755 /* RESTClient.swift in Sources */,
+				9B4C7D67245E43F20038842F /* RecipeListConfigurator.swift in Sources */,
 				9B0FA34A245E28A000492755 /* ApplicationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

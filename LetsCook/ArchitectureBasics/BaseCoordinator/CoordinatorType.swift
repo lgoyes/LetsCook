@@ -21,10 +21,6 @@ protocol CoordinatorType: AnyObject, Presentable {
 }
 
 extension CoordinatorType {
-    func start() {
-        
-    }
-    
     func addDependency(_ coordinator: CoordinatorType) {
         for element in subCoordinators where element === coordinator {
             return

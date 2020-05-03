@@ -8,17 +8,15 @@
 
 import RxSwift
 
-public final class RESTClient: RESTClientType {
+public final class RESTClient: ClientType {
 
     let manager: URLSession
-    let responseValidator: ResponseValidator
     let decoder: JSONDecoder
     let baseURLComponents: URLComponents
 
     public init(baseURL: String) {
         let configuration = URLSessionConfiguration.default
         self.manager = URLSession(configuration: configuration)
-        self.responseValidator = ResponseValidator()
         self.decoder = JSONDecoder()
 
         if let baseURLComponents = URLComponents(string: baseURL) {
@@ -31,7 +29,8 @@ public final class RESTClient: RESTClientType {
     public func request<Response: Decodable>(_ endpoint: Endpoint<Response>) -> Single<Response> {
         return Single<Response>.create { emitter -> Disposable in
 
-            let url = self.getBasicURLComponents(from: endpoint.path)
+            var url = self.baseURLComponents
+            url.path = endpoint.path
 
             let httpRequest = self.getURLRequest(
                 from: url,
@@ -101,28 +100,6 @@ public final class RESTClient: RESTClientType {
         return try? JSONSerialization.data(withJSONObject: parameters, options: [])
     }
 
-    func getURLFrom(fullPath: String) -> URLComponents {
-        if let urlComponents = URLComponents(string: fullPath) {
-            return urlComponents
-        } else {
-            fatalError("Invalid URL")
-        }
-    }
-
-    func getURLFrom(relativePath: String) -> URLComponents {
-        var urlComponent = self.baseURLComponents
-        urlComponent.path = relativePath
-        return urlComponent
-    }
-
-    func getBasicURLComponents(from path: RESTEndpointPath) -> URLComponents {
-        switch path {
-        case .relativePath(let relativePath):
-            return getURLFrom(relativePath: relativePath)
-        case .fullPath(let fullPath):
-            return getURLFrom(fullPath: fullPath)
-        }
-    }
 
     func handleResponse<Response: Decodable>(
         request: URLRequest,
@@ -131,13 +108,13 @@ public final class RESTClient: RESTClientType {
         do {
             let httpResponse = try getHttpResponse(from: rawResponse.response)
 
-            try responseValidator
+            try ResponseValidator
                 .validateResponse(
                     statusCode: httpResponse.statusCode,
                     responseError: rawResponse.error)
 
             guard let data = rawResponse.data else {
-                throw RemoteError.dataWasNil
+                throw NetworkError.dataWasNil
             }
 
             let apiResponse = try decoder.decode(Response.self, from: data)
@@ -150,13 +127,11 @@ public final class RESTClient: RESTClientType {
 
     func getHttpResponse(from response: URLResponse?) throws -> HTTPURLResponse {
         guard let response = response else {
-            Logger.debugLog(logType: .error)
-            throw RemoteError.urlResponseWasNil
+            throw NetworkError.urlResponseWasNil
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
-            Logger.debugLog(logType: .error, data: response)
-            throw RemoteError.httpURLResponseCastFailure
+            throw NetworkError.httpURLResponseCastFailure
         }
 
         return httpResponse

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol ApplicationPresenterType: BasePresenterType {
+    
+}
+
+final class ApplicationPresenter: BasePresenter<ApplicationViewType, ApplicationViewController>, ApplicationPresenterType {
+    
+}

@@ -11,24 +11,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-//    private lazy var applicationCoordinator: ApplicationCoordinatorType = {
-//        return ApplicationCoordinator(
-//            router: )
-//    }()
+    private lazy var applicationCoordinator: ApplicationCoordinatorType = {
+        return ApplicationCoordinator(router: MainRouter())
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
         appWindow.windowScene = windowScene
-
-//        appCoordinator = AppCoordinator(navigationController: navController)
-//        appCoordinator.start()
-//
-//        appWindow.rootViewController = navController
-//        appWindow.makeKeyAndVisible()
-//
-//        window = appWindow
+        
+        appWindow.rootViewController = applicationCoordinator.toPresent()
+        appWindow.makeKeyAndVisible()
+        window = appWindow
+        
+        applicationCoordinator.start()
     }
 }
 

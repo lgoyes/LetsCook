@@ -22,4 +22,16 @@ final class MainRouter: NSObject, RouterType {
     init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
     }
+    
+    func push(_ module: Presentable, animated: Bool) {
+        let controller = module.toPresent()
+        
+        // Avoid pushing UINavigationController onto stack
+        guard controller is UINavigationController == false else {
+            assertionFailure("Should not push UINavigationController.")
+            return
+        }
+        
+        self.navigationController.pushViewController(controller, animated: animated)
+    }
 }

@@ -11,4 +11,6 @@ import UIKit
 protocol RouterType: AnyObject, Presentable {
     var navigationController: UINavigationController { get }
     var rootViewController: UIViewController? { get }
+    
+    func push(_ module: Presentable, animated: Bool)
 }

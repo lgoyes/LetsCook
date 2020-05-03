@@ -8,14 +8,38 @@
 
 import Foundation
 
-protocol ApplicationCoordinatorType {
-    
+protocol ApplicationCoordinatorType: CoordinatorType {
 }
 
-final class ApplicationCoordinator: BaseCoordinator {
+final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType {
+    private var restClient: ClientType
     
-}
-
-extension ApplicationCoordinator: ApplicationCoordinatorType {
     
+    // MARK: - Initializer
+    required init(router: RouterType) {
+        self.restClient = RESTClient(baseURL: DataConstants.serverURL)
+        super.init(router: router)
+    }
+    
+    override func start() {
+        presentRecipeList()
+    }
+    
+    // MARK - SubCoordinators
+    func presentRecipeList() {
+        let coordinator = fetchOrCreateListCoordinator()
+        self.addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    
+    private func fetchOrCreateListCoordinator() -> RecipeListCoordinator {
+        return (self.subCoordinators.first { $0 is RecipeListCoordinator } as? RecipeListCoordinator)
+            ?? createListCoordinator()
+    }
+    
+    private func createListCoordinator() -> RecipeListCoordinator {
+        let coordinator = RecipeListCoordinator(router: router)
+        return coordinator
+    }
 }

@@ -9,12 +9,15 @@
 import UIKit
 
 class BaseCoordinator: CoordinatorType {
-    
     var router: RouterType
     var subCoordinators: [CoordinatorType]
     
     required init(router: RouterType) {
         self.router = router
         self.subCoordinators = []
+    }
+    
+    func start() {
+        fatalError("Must be overriden")
     }
 }

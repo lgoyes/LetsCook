@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-public protocol RESTClientType: AnyObject {
+public protocol ClientType: AnyObject {
     func request<Response: Decodable>(_ endpoint: Endpoint<Response>) -> Single<Response>
 }
