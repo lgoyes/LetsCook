@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 @testable import LetsCook
 
-class BaseInteractorTest: XCTestCase {
+final class BaseInteractorTest: XCTestCase {
     
     struct Constants {
         enum TestError: Error {

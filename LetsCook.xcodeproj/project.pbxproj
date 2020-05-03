@@ -73,6 +73,7 @@
 		9BE3006D245E80700070E915 /* RecipeDetailRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3006C245E80700070E915 /* RecipeDetailRepositoryType.swift */; };
 		9BE30075245E809F0070E915 /* GetRecipeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30074245E809F0070E915 /* GetRecipeDetailInteractor.swift */; };
 		9BE30077245E80D10070E915 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30076245E80D10070E915 /* RecipeDetail.swift */; };
+		9BF37120245F73B60020F976 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3711F245F73B60020F976 /* ApplicationCoordinatorTests.swift */; };
 		D86C95BE46463702B1CC7041 /* Pods_LetsCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26689110563D1569E3745017 /* Pods_LetsCook.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +172,7 @@
 		9BE3006C245E80700070E915 /* RecipeDetailRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRepositoryType.swift; sourceTree = "<group>"; };
 		9BE30074245E809F0070E915 /* GetRecipeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailInteractor.swift; sourceTree = "<group>"; };
 		9BE30076245E80D10070E915 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
+		9BF3711F245F73B60020F976 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		9C7D0258E797D4E08A99BA68 /* Pods_LetsCookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsCookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB9D7A83F31D9E6EAA9D1A3 /* Pods-LetsCook-LetsCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCook-LetsCookUITests.release.xcconfig"; path = "Target Support Files/Pods-LetsCook-LetsCookUITests/Pods-LetsCook-LetsCookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F9417348DBB41CDAE28714A0 /* Pods-LetsCookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCookUITests.debug.xcconfig"; path = "Target Support Files/Pods-LetsCookUITests/Pods-LetsCookUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		9B0FA31B245E27CE00492755 /* LetsCookTests */ = {
 			isa = PBXGroup;
 			children = (
+				9BF3711E245F73AC0020F976 /* Application */,
 				9B95306A245F6CDF005DABCB /* ArchitectureBasics */,
 				9B0FA34B245E28B300492755 /* TestDoubles */,
 				9B0FA31E245E27CE00492755 /* Info.plist */,
@@ -311,20 +314,9 @@
 		9B0FA340245E286B00492755 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				9BE3007B245E886E0070E915 /* Data */,
 				9B0FA342245E287A00492755 /* Presentation */,
-				9B0FA341245E287200492755 /* Domain */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		9B0FA341245E287200492755 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				9BE3007D245E88830070E915 /* Repositories */,
-				9BE3007A245E88640070E915 /* Interactors */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		9B0FA342245E287A00492755 /* Presentation */ = {
@@ -632,33 +624,12 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
-		9BE3007A245E88640070E915 /* Interactors */ = {
+		9BF3711E245F73AC0020F976 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				9BF3711F245F73B60020F976 /* ApplicationCoordinatorTests.swift */,
 			);
-			path = Interactors;
-			sourceTree = "<group>";
-		};
-		9BE3007B245E886E0070E915 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				9BE3007C245E887F0070E915 /* Repositories */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		9BE3007C245E887F0070E915 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		9BE3007D245E88830070E915 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		AB848DE4A40ED8749BA6CAE6 /* Pods */ = {
@@ -960,6 +931,7 @@
 				9B049F88245F646A004EC6EA /* BaseInteractorAdapterTests.swift in Sources */,
 				9B0FA34F245E28D200492755 /* RouterSpy.swift in Sources */,
 				9B0FA351245E28EC00492755 /* BaseCoordinatorTests.swift in Sources */,
+				9BF37120245F73B60020F976 /* ApplicationCoordinatorTests.swift in Sources */,
 				9B0FA367245E2EEF00492755 /* BasePresenterTests.swift in Sources */,
 				9B0FA361245E2C2200492755 /* BasePresenterSpy.swift in Sources */,
 				9B953069245F6CD8005DABCB /* SingleInteractorTests.swift in Sources */,

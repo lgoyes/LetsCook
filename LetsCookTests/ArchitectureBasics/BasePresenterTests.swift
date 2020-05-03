@@ -9,11 +9,11 @@
 import XCTest
 @testable import LetsCook
 
-class TestableBasePresenter: BasePresenter<BaseViewSpyType, BaseViewControllerSpy<TestableBasePresenter>> {
+final class TestableBasePresenter: BasePresenter<BaseViewSpyType, BaseViewControllerSpy<TestableBasePresenter>> {
     
 }
 
-class BasePresenterTests: XCTestCase {
+final class BasePresenterTests: XCTestCase {
     
     var view: BaseViewControllerSpy<TestableBasePresenter>!
     var sut: TestableBasePresenter!

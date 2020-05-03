@@ -10,11 +10,11 @@ import XCTest
 import RxSwift
 @testable import LetsCook
 
-class TestBaseInteractorAdapter<Response, Params>: BaseInteractorAdapter<Response, Params, TestBaseInteractorAdapter> {
+final class TestBaseInteractorAdapter<Response, Params>: BaseInteractorAdapter<Response, Params, TestBaseInteractorAdapter> {
     
 }
 
-class BaseInteractorAdapterTests: XCTestCase {
+final class BaseInteractorAdapterTests: XCTestCase {
     
     var sut: TestBaseInteractorAdapter<Any, Any>!
     

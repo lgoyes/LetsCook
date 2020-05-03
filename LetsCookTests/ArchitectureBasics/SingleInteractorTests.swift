@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 @testable import LetsCook
 
-class SingleInteractorSpy: SingleInteractor<Any, Any> {
+final class SingleInteractorSpy: SingleInteractor<Any, Any> {
     
     enum TestError: Error {
         case anyError
@@ -33,7 +33,7 @@ class SingleInteractorSpy: SingleInteractor<Any, Any> {
     }
 }
 
-class SingleInteractorTests: XCTestCase {
+final class SingleInteractorTests: XCTestCase {
     
     var sut: SingleInteractorSpy!
     

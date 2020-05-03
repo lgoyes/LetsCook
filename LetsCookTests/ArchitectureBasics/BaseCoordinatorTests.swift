@@ -9,7 +9,7 @@
 import XCTest
 @testable import LetsCook
 
-class BaseCoordinatorTests: XCTestCase {
+final class BaseCoordinatorTests: XCTestCase {
     
     var router: RouterSpy!
     var sut: BaseCoordinator!

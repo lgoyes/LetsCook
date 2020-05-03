@@ -16,7 +16,7 @@ protocol ApplicationCoordinatorType: CoordinatorType {
 }
 
 final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType {
-    private var restClient: ClientType
+    var restClient: ClientType
     
     // MARK: - Initializer
     required init(router: RouterType) {
@@ -35,12 +35,12 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
         coordinator.start()
     }
     
-    private func fetchOrCreateListCoordinator() -> RecipeListCoordinator {
+    func fetchOrCreateListCoordinator() -> RecipeListCoordinator {
         return (self.subCoordinators.first { $0 is RecipeListCoordinator } as? RecipeListCoordinator)
             ?? createListCoordinator()
     }
     
-    private func createListCoordinator() -> RecipeListCoordinator {
+    func createListCoordinator() -> RecipeListCoordinator {
         let coordinator = RecipeListCoordinator(router: router)
         coordinator.restClient = restClient
         coordinator.delegate = self
@@ -54,12 +54,12 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
         coordinator.start(with: recipeId)
     }
     
-    private func fetchOrCreateDetailCoordinator() -> RecipeDetailCoordinator {
+    func fetchOrCreateDetailCoordinator() -> RecipeDetailCoordinator {
         return (self.subCoordinators.first { $0 is RecipeDetailCoordinator } as? RecipeDetailCoordinator)
             ?? createDetailCoordinator()
     }
     
-    private func createDetailCoordinator() -> RecipeDetailCoordinator {
+    func createDetailCoordinator() -> RecipeDetailCoordinator {
         let coordinator = RecipeDetailCoordinator(router: router)
         coordinator.restClient = restClient
         return coordinator
