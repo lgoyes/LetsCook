@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol RecipeDetailUIViewType {
     func setTitle(_ text: String)
     func setRating(_ number: Int)
     func setInstructions(_ text: String)
+    func setRecipeImage(from url: String)
 }
 
 final class RecipeDetailView: UIView {
@@ -28,6 +30,11 @@ final class RecipeDetailView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
+    }()
+    
+    lazy var recipeImage: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
     }()
     
     lazy var instructionsLabel: UILabel = {
@@ -76,6 +83,7 @@ final class RecipeDetailView: UIView {
         prepareScrollView()
         prepareStackView()
         prepareTitleLabel()
+        prepareImageView()
         prepareRatingStack()
         prepareInstructionsLabel()
     }
@@ -103,6 +111,10 @@ final class RecipeDetailView: UIView {
     
     func prepareTitleLabel() {
         stackView.addArrangedSubview(titleLabel)
+    }
+    
+    func prepareImageView() {
+        stackView.addArrangedSubview(recipeImage)
     }
     
     func prepareRatingStack() {
@@ -133,6 +145,15 @@ final class RecipeDetailView: UIView {
 }
 
 extension RecipeDetailView: RecipeDetailUIViewType {
+    func setRecipeImage(from url: String) {
+        guard let url = URL(string: url), UIApplication.shared.canOpenURL(url) else {
+            print("Not valid URL")
+            return
+        }
+        
+        recipeImage.kf.setImage(with: url)
+    }
+    
     func setInstructions(_ text: String) {
         self.instructionsLabel.text = text
     }

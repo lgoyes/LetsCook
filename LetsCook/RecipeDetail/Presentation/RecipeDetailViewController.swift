@@ -36,5 +36,6 @@ extension RecipeDetailViewController: RecipeDetailViewType {
         view.setTitle(recipeDetail.title)
         view.setRating(recipeDetail.rating)
         view.setInstructions(recipeDetail.instructions)
+        view.setRecipeImage(from: recipeDetail.image)
     }
 }

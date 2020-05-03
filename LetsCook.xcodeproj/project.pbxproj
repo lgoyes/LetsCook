@@ -21,9 +21,6 @@
 		9B0FA33D245E284E00492755 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA33C245E284E00492755 /* CoordinatorType.swift */; };
 		9B0FA33F245E285D00492755 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA33E245E285D00492755 /* BaseCoordinator.swift */; };
 		9B0FA344245E288600492755 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA343245E288600492755 /* ApplicationCoordinator.swift */; };
-		9B0FA346245E288E00492755 /* ApplicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA345245E288E00492755 /* ApplicationPresenter.swift */; };
-		9B0FA348245E289700492755 /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA347245E289600492755 /* ApplicationConfigurator.swift */; };
-		9B0FA34A245E28A000492755 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA349245E28A000492755 /* ApplicationViewController.swift */; };
 		9B0FA34F245E28D200492755 /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA34E245E28D200492755 /* RouterSpy.swift */; };
 		9B0FA351245E28EC00492755 /* BaseCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA350245E28EC00492755 /* BaseCoordinatorTests.swift */; };
 		9B0FA354245E2B4A00492755 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0FA353245E2B4A00492755 /* BasePresenter.swift */; };
@@ -119,9 +116,6 @@
 		9B0FA33C245E284E00492755 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		9B0FA33E245E285D00492755 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		9B0FA343245E288600492755 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		9B0FA345245E288E00492755 /* ApplicationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPresenter.swift; sourceTree = "<group>"; };
-		9B0FA347245E289600492755 /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
-		9B0FA349245E28A000492755 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		9B0FA34E245E28D200492755 /* RouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpy.swift; sourceTree = "<group>"; };
 		9B0FA350245E28EC00492755 /* BaseCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorTests.swift; sourceTree = "<group>"; };
 		9B0FA353245E2B4A00492755 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
@@ -332,9 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				9B0FA343245E288600492755 /* ApplicationCoordinator.swift */,
-				9B0FA345245E288E00492755 /* ApplicationPresenter.swift */,
-				9B0FA347245E289600492755 /* ApplicationConfigurator.swift */,
-				9B0FA349245E28A000492755 /* ApplicationViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -908,13 +899,11 @@
 				9B3ADE13245E552900488C25 /* RecipeListRepositoryType.swift in Sources */,
 				9BE30077245E80D10070E915 /* RecipeDetail.swift in Sources */,
 				9B3ADE0C245E547000488C25 /* SingleInteractor.swift in Sources */,
-				9B0FA348245E289700492755 /* ApplicationConfigurator.swift in Sources */,
 				9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */,
 				9B0FA373245E398600492755 /* HTTPMethod.swift in Sources */,
 				9B4C7D6B245E454E0038842F /* RecipeListView.swift in Sources */,
 				9B4C7D5D245E3ED10038842F /* PresentationConstants.swift in Sources */,
 				9B0FA33A245E283200492755 /* Presentable.swift in Sources */,
-				9B0FA346245E288E00492755 /* ApplicationPresenter.swift in Sources */,
 				9B4C7D59245E3EC30038842F /* DataConstants.swift in Sources */,
 				9B3ADE04245E51E000488C25 /* RecipeListRepository.swift in Sources */,
 				9B0FA308245E27CD00492755 /* SceneDelegate.swift in Sources */,
@@ -943,7 +932,6 @@
 				9B0FA377245E3A3900492755 /* RESTClient.swift in Sources */,
 				9BE30060245E7AA70070E915 /* RecipeAdapterCellViewModel.swift in Sources */,
 				9B4C7D67245E43F20038842F /* RecipeListConfigurator.swift in Sources */,
-				9B0FA34A245E28A000492755 /* ApplicationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
