@@ -1,5 +1,5 @@
 //
-//  RecipeListCoordinator.swift
+//  RecipeDetailCoordinator.swift
 //  LetsCook
 //
 //  Created by Luis David Goyes Garces on 5/2/20.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol RecipeListCoordinatorType: CoordinatorType {
+protocol RecipeDetailCoordinatorType: CoordinatorType {
 }
 
-final class RecipeListCoordinator: BaseCoordinator, ApplicationCoordinatorType {
+final class RecipeDetailCoordinator: BaseCoordinator, RecipeDetailCoordinatorType {
     // MARK: - Initializer
     override func start() {
-        let module = RecipeListConfigurator.configure()
+        let module = RecipeDetailConfigurator.configure()
         self.router.push(module, animated: true)
     }
 }

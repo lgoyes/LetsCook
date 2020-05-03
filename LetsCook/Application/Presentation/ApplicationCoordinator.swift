@@ -22,7 +22,7 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
     }
     
     override func start() {
-        presentRecipeList()
+        presentRecipeDetail()
     }
     
     // MARK - SubCoordinators
@@ -32,7 +32,6 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
         coordinator.start()
     }
     
-    
     private func fetchOrCreateListCoordinator() -> RecipeListCoordinator {
         return (self.subCoordinators.first { $0 is RecipeListCoordinator } as? RecipeListCoordinator)
             ?? createListCoordinator()
@@ -40,6 +39,22 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
     
     private func createListCoordinator() -> RecipeListCoordinator {
         let coordinator = RecipeListCoordinator(router: router)
+        return coordinator
+    }
+    
+    func presentRecipeDetail() {
+        let coordinator = fetchOrCreateDetailCoordinator()
+        self.addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func fetchOrCreateDetailCoordinator() -> RecipeDetailCoordinator {
+        return (self.subCoordinators.first { $0 is RecipeDetailCoordinator } as? RecipeDetailCoordinator)
+            ?? createDetailCoordinator()
+    }
+    
+    private func createDetailCoordinator() -> RecipeDetailCoordinator {
+        let coordinator = RecipeDetailCoordinator(router: router)
         return coordinator
     }
 }
