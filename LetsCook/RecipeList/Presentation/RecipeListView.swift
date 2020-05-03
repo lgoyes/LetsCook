@@ -9,10 +9,10 @@
 import UIKit
 
 protocol RecipeListUIViewType {
-    
+    func showTable()
 }
 
-final class RecipeListView: UIView, RecipeListUIViewType {
+final class RecipeListView: UIView {
     
     lazy var tableView: RecipeTableView = {
         let tableView = RecipeTableView()
@@ -53,7 +53,9 @@ final class RecipeListView: UIView, RecipeListUIViewType {
             activityIndicator.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor)
         ])
     }
-    
+}
+
+extension RecipeListView: RecipeListUIViewType {
     func showTable() {
         tableView.isHidden = false
         activityIndicator.isHidden = true

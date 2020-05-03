@@ -8,45 +8,8 @@
 
 import UIKit
 
-struct RecipeAdapterCellViewModel {
-    let id: Int
-    let title: String
-}
-
-final class RecipeAdapterCell: UITableViewCell {
-    
-    struct Constants {
-        static let margin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-    }
-    
-    lazy var label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configure(with data: RecipeAdapterCellViewModel) {
-        self.label.text = data.title
-    }
-    
-    func setConstraints() {
-        addSubview(label)
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.margin.top),
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.margin.bottom),
-            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.margin.left),
-            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constants.margin.right)
-        ])
-    }
+protocol RecipeTableViewAdapterDelegate: AnyObject {
+    func tableViewAdapter(didSelectRecipe recipe: Recipe)
 }
 
 final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +17,7 @@ final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITab
     var data: [RecipeAdapterCellViewModel] = []
     private let cellIdentifier: String = "RecipeAdapterCell"
     var tableView: UITableView?
+    weak var delegate: RecipeTableViewAdapterDelegate?
     
     func attach(to tableView: UITableView) {
         self.tableView = tableView
@@ -81,5 +45,12 @@ final class RecipeTableViewAdapter<CellType: RecipeAdapterCell>: NSObject, UITab
         cell.configure(with: data[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipe = data[indexPath.row]
+        let mappedRecipe = Recipe(id: recipe.id, title: recipe.title)
+        delegate?.tableViewAdapter(didSelectRecipe: mappedRecipe)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

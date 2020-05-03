@@ -66,6 +66,13 @@
 		9B4C7D74245E48B10038842F /* RecipeDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D73245E48B10038842F /* RecipeDetailConfigurator.swift */; };
 		9B4C7D76245E48BC0038842F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D75245E48BC0038842F /* RecipeDetailViewController.swift */; };
 		9B4C7D78245E48C50038842F /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C7D77245E48C50038842F /* RecipeDetailView.swift */; };
+		9BE30060245E7AA70070E915 /* RecipeAdapterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3005F245E7AA70070E915 /* RecipeAdapterCellViewModel.swift */; };
+		9BE30062245E7AB60070E915 /* RecipeAdapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30061245E7AB60070E915 /* RecipeAdapterCell.swift */; };
+		9BE30066245E80450070E915 /* APIRecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30065245E80450070E915 /* APIRecipeDetail.swift */; };
+		9BE30069245E80580070E915 /* RecipeDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30068245E80580070E915 /* RecipeDetailRepository.swift */; };
+		9BE3006D245E80700070E915 /* RecipeDetailRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3006C245E80700070E915 /* RecipeDetailRepositoryType.swift */; };
+		9BE30075245E809F0070E915 /* GetRecipeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30074245E809F0070E915 /* GetRecipeDetailInteractor.swift */; };
+		9BE30077245E80D10070E915 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE30076245E80D10070E915 /* RecipeDetail.swift */; };
 		D86C95BE46463702B1CC7041 /* Pods_LetsCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26689110563D1569E3745017 /* Pods_LetsCook.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +164,13 @@
 		9B4C7D73245E48B10038842F /* RecipeDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailConfigurator.swift; sourceTree = "<group>"; };
 		9B4C7D75245E48BC0038842F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		9B4C7D77245E48C50038842F /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		9BE3005F245E7AA70070E915 /* RecipeAdapterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAdapterCellViewModel.swift; sourceTree = "<group>"; };
+		9BE30061245E7AB60070E915 /* RecipeAdapterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAdapterCell.swift; sourceTree = "<group>"; };
+		9BE30065245E80450070E915 /* APIRecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRecipeDetail.swift; sourceTree = "<group>"; };
+		9BE30068245E80580070E915 /* RecipeDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRepository.swift; sourceTree = "<group>"; };
+		9BE3006C245E80700070E915 /* RecipeDetailRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRepositoryType.swift; sourceTree = "<group>"; };
+		9BE30074245E809F0070E915 /* GetRecipeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailInteractor.swift; sourceTree = "<group>"; };
+		9BE30076245E80D10070E915 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		9C7D0258E797D4E08A99BA68 /* Pods_LetsCookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsCookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB9D7A83F31D9E6EAA9D1A3 /* Pods-LetsCook-LetsCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCook-LetsCookUITests.release.xcconfig"; path = "Target Support Files/Pods-LetsCook-LetsCookUITests/Pods-LetsCook-LetsCookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F9417348DBB41CDAE28714A0 /* Pods-LetsCookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsCookUITests.debug.xcconfig"; path = "Target Support Files/Pods-LetsCookUITests/Pods-LetsCookUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +312,7 @@
 		9B0FA340245E286B00492755 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				9BE3007B245E886E0070E915 /* Data */,
 				9B0FA342245E287A00492755 /* Presentation */,
 				9B0FA341245E287200492755 /* Domain */,
 			);
@@ -307,6 +322,8 @@
 		9B0FA341245E287200492755 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9BE3007D245E88830070E915 /* Repositories */,
+				9BE3007A245E88640070E915 /* Interactors */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -386,8 +403,6 @@
 		9B0FA36A245E391800492755 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				9B0FA36D245E392E00492755 /* Interactor */,
-				9B0FA36C245E392400492755 /* Repository */,
 				9B0FA36B245E391D00492755 /* Services */,
 			);
 			path = Networking;
@@ -408,25 +423,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		9B0FA36C245E392400492755 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		9B0FA36D245E392E00492755 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		9B3ADDF6245E4A7300488C25 /* Table */ = {
 			isa = PBXGroup;
 			children = (
 				9B3ADDF7245E4A8300488C25 /* RecipeTableView.swift */,
 				9B3ADDF9245E4B3700488C25 /* RecipeTableViewAdapter.swift */,
+				9BE3005F245E7AA70070E915 /* RecipeAdapterCellViewModel.swift */,
+				9BE30061245E7AB60070E915 /* RecipeAdapterCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -543,6 +546,8 @@
 		9B4C7D6D245E48880038842F /* RecipeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				9BE3006A245E805E0070E915 /* Domain */,
+				9BE30063245E80350070E915 /* Data */,
 				9B4C7D6E245E488E0038842F /* Presentation */,
 			);
 			path = RecipeDetail;
@@ -558,6 +563,94 @@
 				9B4C7D77245E48C50038842F /* RecipeDetailView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9BE30063245E80350070E915 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9BE30067245E804A0070E915 /* Repositories */,
+				9BE30064245E803A0070E915 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9BE30064245E803A0070E915 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BE30065245E80450070E915 /* APIRecipeDetail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9BE30067245E804A0070E915 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9BE30068245E80580070E915 /* RecipeDetailRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9BE3006A245E805E0070E915 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9BE30071245E80850070E915 /* Interactors */,
+				9BE3006E245E80760070E915 /* Models */,
+				9BE3006B245E80630070E915 /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9BE3006B245E80630070E915 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9BE3006C245E80700070E915 /* RecipeDetailRepositoryType.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9BE3006E245E80760070E915 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BE30076245E80D10070E915 /* RecipeDetail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9BE30071245E80850070E915 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				9BE30074245E809F0070E915 /* GetRecipeDetailInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		9BE3007A245E88640070E915 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		9BE3007B245E886E0070E915 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9BE3007C245E887F0070E915 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9BE3007C245E887F0070E915 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9BE3007D245E88830070E915 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		AB848DE4A40ED8749BA6CAE6 /* Pods */ = {
@@ -804,6 +897,7 @@
 				9B0FA365245E2D8800492755 /* MainRouter.swift in Sources */,
 				9B4C7D72245E48A80038842F /* RecipeDetailPresenter.swift in Sources */,
 				9B0FA33D245E284E00492755 /* CoordinatorType.swift in Sources */,
+				9BE30075245E809F0070E915 /* GetRecipeDetailInteractor.swift in Sources */,
 				9B0FA338245E282100492755 /* RouterType.swift in Sources */,
 				9B0FA33F245E285D00492755 /* BaseCoordinator.swift in Sources */,
 				9B3ADDFD245E4DAA00488C25 /* Recipe.swift in Sources */,
@@ -812,6 +906,7 @@
 				9B3ADE0A245E53A500488C25 /* Interactor.swift in Sources */,
 				9B0FA375245E399700492755 /* APIContentType.swift in Sources */,
 				9B3ADE13245E552900488C25 /* RecipeListRepositoryType.swift in Sources */,
+				9BE30077245E80D10070E915 /* RecipeDetail.swift in Sources */,
 				9B3ADE0C245E547000488C25 /* SingleInteractor.swift in Sources */,
 				9B0FA348245E289700492755 /* ApplicationConfigurator.swift in Sources */,
 				9B4C7D54245E3C040038842F /* NetworkError.swift in Sources */,
@@ -825,6 +920,9 @@
 				9B0FA308245E27CD00492755 /* SceneDelegate.swift in Sources */,
 				9B4C7D56245E3D690038842F /* RESTRawResponse.swift in Sources */,
 				9B0FA344245E288600492755 /* ApplicationCoordinator.swift in Sources */,
+				9BE30062245E7AB60070E915 /* RecipeAdapterCell.swift in Sources */,
+				9BE30069245E80580070E915 /* RecipeDetailRepository.swift in Sources */,
+				9BE3006D245E80700070E915 /* RecipeDetailRepositoryType.swift in Sources */,
 				9B4C7D52245E3BD40038842F /* ResponseValidator.swift in Sources */,
 				9B4C7D76245E48BC0038842F /* RecipeDetailViewController.swift in Sources */,
 				9B4C7D65245E43EA0038842F /* RecipeListPresenter.swift in Sources */,
@@ -838,10 +936,12 @@
 				9B3ADDFA245E4B3700488C25 /* RecipeTableViewAdapter.swift in Sources */,
 				9B0FA358245E2B6C00492755 /* BasePresenterType.swift in Sources */,
 				9B4C7D63245E43E10038842F /* RecipeListCoordinator.swift in Sources */,
+				9BE30066245E80450070E915 /* APIRecipeDetail.swift in Sources */,
 				9B4C7D60245E42510038842F /* UIViewController+Presentable.swift in Sources */,
 				9B0FA35D245E2BBC00492755 /* BaseViewController.swift in Sources */,
 				9B0FA356245E2B5700492755 /* BasePresenterLifeCycleNotifiable.swift in Sources */,
 				9B0FA377245E3A3900492755 /* RESTClient.swift in Sources */,
+				9BE30060245E7AA70070E915 /* RecipeAdapterCellViewModel.swift in Sources */,
 				9B4C7D67245E43F20038842F /* RecipeListConfigurator.swift in Sources */,
 				9B0FA34A245E28A000492755 /* ApplicationViewController.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ import Foundation
 final class RecipeListConfigurator {
     struct Dependencies {
         let client: ClientType
+        let coordinator: RecipeListCoordinatorType
     }
     
     static func configure(using dependencies: Dependencies) -> Presentable {
@@ -18,7 +19,7 @@ final class RecipeListConfigurator {
         
         let getRecipesInteractor = GetRecipesInteractor(recipeListRepository: recipeListRepository)
         
-        let presenter = RecipeListPresenter(dependencies: RecipeListPresenter.Dependencies(getRecipesInteractor: getRecipesInteractor))
+        let presenter = RecipeListPresenter(dependencies: RecipeListPresenter.Dependencies(getRecipesInteractor: getRecipesInteractor, coordinator: dependencies.coordinator))
         
         let viewController = RecipeListViewController(presenter: presenter)
         

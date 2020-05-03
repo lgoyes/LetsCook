@@ -14,7 +14,11 @@ protocol RecipeListViewType: BaseViewType {
 
 final class RecipeListViewController: BaseViewController<RecipeListPresenterType> {
     
-    let adapter = RecipeTableViewAdapter()
+    lazy var adapter: RecipeTableViewAdapter = {
+        let adapter = RecipeTableViewAdapter()
+        adapter.delegate = self
+        return adapter
+    }()
     
     private var content: RecipeListUIViewType {
         return self.view as! RecipeListUIViewType
@@ -34,7 +38,13 @@ final class RecipeListViewController: BaseViewController<RecipeListPresenterType
 
 extension RecipeListViewController: RecipeListViewType {
     func set(data: [Recipe]) {
-        (view as? RecipeListView)?.showTable()
+        (view as? RecipeListUIViewType)?.showTable()
         adapter.set(data: data)
+    }
+}
+
+extension RecipeListViewController: RecipeTableViewAdapterDelegate {
+    func tableViewAdapter(didSelectRecipe recipe: Recipe) {
+        presenter.onRecipeSelected(recipe)
     }
 }

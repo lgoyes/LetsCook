@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol RecipeListCoordinatorDelegate: AnyObject {
+    func onRecipeDetailRequested(for recipeId: Int)
+}
+
 protocol ApplicationCoordinatorType: CoordinatorType {
 }
 
@@ -39,14 +43,15 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
     private func createListCoordinator() -> RecipeListCoordinator {
         let coordinator = RecipeListCoordinator(router: router)
         coordinator.restClient = restClient
+        coordinator.delegate = self
         return coordinator
     }
     
     // MARK - RecipeDetail sub-coordinator
-    func presentRecipeDetail() {
+    func presentRecipeDetail(withId recipeId: Int) {
         let coordinator = fetchOrCreateDetailCoordinator()
         self.addDependency(coordinator)
-        coordinator.start()
+        coordinator.start(with: recipeId)
     }
     
     private func fetchOrCreateDetailCoordinator() -> RecipeDetailCoordinator {
@@ -56,6 +61,13 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
     
     private func createDetailCoordinator() -> RecipeDetailCoordinator {
         let coordinator = RecipeDetailCoordinator(router: router)
+        coordinator.restClient = restClient
         return coordinator
+    }
+}
+
+extension ApplicationCoordinator: RecipeListCoordinatorDelegate {
+    func onRecipeDetailRequested(for recipeId: Int) {
+        presentRecipeDetail(withId: recipeId)
     }
 }

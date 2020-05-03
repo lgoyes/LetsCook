@@ -9,8 +9,18 @@
 import Foundation
 
 final class RecipeDetailConfigurator {
-    static func configure() -> Presentable {
-        let presenter = RecipeDetailPresenter()
+    struct Dependencies {
+        let recipeId: Int
+        let client: ClientType
+        let coordinator: RecipeDetailCoordinatorType
+    }
+    
+    static func configure(with dependencies: Dependencies) -> Presentable {
+        let recipeDetailRepository = RecipeDetailRepository(client: dependencies.client)
+        
+        let getRecipeDetailInteractor = GetRecipeDetailInteractor(recipeDetailRepository: recipeDetailRepository)
+        
+        let presenter = RecipeDetailPresenter(dependencies: RecipeDetailPresenter.Dependencies(recipeId: dependencies.recipeId, getRecipeDetailInteractor: getRecipeDetailInteractor, coordinator: dependencies.coordinator))
         
         let viewController = RecipeDetailViewController(presenter: presenter)
         

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RecipeDetailViewType: BaseViewType {
-    
+    func drawView(with recipeDetail: RecipeDetail)
 }
 
 final class RecipeDetailViewController: BaseViewController<RecipeDetailPresenterType> {
@@ -18,7 +18,23 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailPresenter
         return self.view as! RecipeListUIViewType
     }
     
+    override func viewDidLoad() {
+        presenter.bind(view: self)
+        super.viewDidLoad()
+    }
+    
     override func loadView() {
         view = RecipeDetailView()
+    }
+}
+
+extension RecipeDetailViewController: RecipeDetailViewType {
+    func drawView(with recipeDetail: RecipeDetail) {
+        guard let view = self.view as? RecipeDetailUIViewType else {
+            fatalError("view was supposed to be RecipeDetailUIViewType")
+        }
+        view.setTitle(recipeDetail.title)
+        view.setRating(recipeDetail.rating)
+        view.setInstructions(recipeDetail.instructions)
     }
 }

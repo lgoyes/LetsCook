@@ -9,18 +9,24 @@
 import Foundation
 
 protocol RecipeListCoordinatorType: CoordinatorType {
+    func onRecipeDetailRequested(for recipeId: Int)
 }
 
 final class RecipeListCoordinator: BaseCoordinator, RecipeListCoordinatorType {
-
+    
     var restClient: ClientType!
+    weak var delegate: RecipeListCoordinatorDelegate?
     
     // MARK: - Initializer
     override func start() {
         guard let restClient = restClient else {
             fatalError("RestClient can not be nil")
         }
-        let module = RecipeListConfigurator.configure(using: RecipeListConfigurator.Dependencies(client: restClient))
+        let module = RecipeListConfigurator.configure(using: RecipeListConfigurator.Dependencies(client: restClient, coordinator: self))
         self.router.push(module, animated: true)
+    }
+    
+    func onRecipeDetailRequested(for recipeId: Int) {
+        delegate?.onRecipeDetailRequested(for: recipeId)
     }
 }
