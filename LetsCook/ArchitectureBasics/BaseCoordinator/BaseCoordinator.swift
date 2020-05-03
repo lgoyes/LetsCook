@@ -18,6 +18,6 @@ class BaseCoordinator: CoordinatorType {
     }
     
     func start() {
-        fatalError("Must be overriden")
+        // must be overriden
     }
 }

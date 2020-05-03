@@ -22,10 +22,10 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
     }
     
     override func start() {
-        presentRecipeDetail()
+        presentRecipeList()
     }
     
-    // MARK - SubCoordinators
+    // MARK - RecipeList sub-coordinator
     func presentRecipeList() {
         let coordinator = fetchOrCreateListCoordinator()
         self.addDependency(coordinator)
@@ -42,6 +42,7 @@ final class ApplicationCoordinator: BaseCoordinator, ApplicationCoordinatorType 
         return coordinator
     }
     
+    // MARK - RecipeDetail sub-coordinator
     func presentRecipeDetail() {
         let coordinator = fetchOrCreateDetailCoordinator()
         self.addDependency(coordinator)
