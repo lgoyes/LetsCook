@@ -34,6 +34,7 @@ final class RecipeListViewController: BaseViewController<RecipeListPresenterType
 
 extension RecipeListViewController: RecipeListViewType {
     func set(data: [Recipe]) {
+        (view as? RecipeListView)?.showTable()
         adapter.set(data: data)
     }
 }

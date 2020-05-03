@@ -17,7 +17,15 @@ final class RecipeListView: UIView, RecipeListUIViewType {
     lazy var tableView: RecipeTableView = {
         let tableView = RecipeTableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isHidden = true
         return tableView
+    }()
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.isHidden = false
+        return activityIndicator
     }()
     
     override init(frame: CGRect) {
@@ -32,11 +40,22 @@ final class RecipeListView: UIView, RecipeListUIViewType {
     
     func setConstraints() {
         self.addSubview(tableView)
+        self.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            
+            activityIndicator.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
+            activityIndicator.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
+            activityIndicator.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            activityIndicator.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor)
         ])
+    }
+    
+    func showTable() {
+        tableView.isHidden = false
+        activityIndicator.isHidden = true
     }
 }
